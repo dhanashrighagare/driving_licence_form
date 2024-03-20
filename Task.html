@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Driving Licence Form</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #e6e6e6; /* Background color for the body */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: sans-serif; /* Adding font family to body */
+      }
+
+      .container {
+        max-width: 1000px;
+        padding: 40px;
+        background-color: #f8f8f8; /* Background color for the form */
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding shadow for depth */
+        font-family: sans-serif; /* Adding font family to container */
+      }
+
+      .text-input {
+        border-radius: 20px;
+        background-color: #f0f0f0;
+        font-family: sans-serif; /* Adding font family to text-input */
+      }
+
+      input[type="text"],
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #f0f0f0; /* Adding border to input fields */
+        border-radius: 20px;
+        box-sizing: border-box;
+        font-family: sans-serif; /* Adding font family to input fields */
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .progress-bar {
+        width: 100%;
+        background-color: #f0f0f0;
+        border-radius: 4px;
+        margin-bottom: 20px;
+      }
+
+      .progress {
+        height: 5px;
+        background-color: #ff4500;
+        border-radius: 4px;
+      }
+      .btn {
+        margin-top: 10px;
+        background-color: #ff4500;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        display: block;
+        margin-left: 70px;
+        font-family: sans-serif; /* Adding font family to buttons */
+      }
+
+      .btn-1 {
+        margin-top: -35px;
+        background-color: #ff4500;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        display: block;
+        margin-left: 150px;
+        font-family: sans-serif; /* Adding font family to buttons */
+      }
+      select {
+        background-color: #f0f0f0; /* Background color for select */
+        font-family: sans-serif; /* Adding font family to select */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="progress-bar">
+        <div id="progress" class="progress"></div>
+      </div>
+      <div id="page1">
+        <div
+          style="
+            color: #ff4500;
+            text-align: center;
+            font-weight: 600;
+            font-size: 18px;
+          "
+        >
+          Let's get started!
+        </div>
+        <div style="text-align: center; color: gray">
+          Add your details (As per your registered records)
+        </div>
+        <br />
+        <div style="font-weight: 600; font-family: sans-serif">Name</div>
+        <input
+          type="text"
+          id="name"
+          class="text-input"
+          placeholder="Enter Name"
+        /><br /><br />
+        <div style="font-weight: 600; font-family: sans-serif">
+          Nature of Driving Licence
+        </div>
+        <label
+          style="background-color: #f0f0f0; border-radius: 20px; padding: 5px"
+        >
+          <input
+            type="radio"
+            name="nature"
+            class="radio-button"
+            value="Private"
+          />Private</label
+        >
+        <label
+          style="background-color: #f0f0f0; border-radius: 20px; padding: 5px"
+          ><input
+            type="radio"
+            name="nature"
+            class="radio-button"
+            value="Commercial"
+          />Commercial</label
+        ><br /><br />
+        <div style="font-weight: 600; font-family: sans-serif">
+          Types of Driving Licence
+        </div>
+        <label
+          style="background-color: #f0f0f0; border-radius: 20px; padding: 5px"
+          ><input
+            type="radio"
+            name="type"
+            class="radio-button"
+            value="Paper"
+          />Paper Driving Licence</label
+        >
+        <label
+          style="background-color: #f0f0f0; border-radius: 20px; padding: 5px"
+          ><input
+            type="radio"
+            name="type"
+            class="radio-button"
+            value="Smart"
+          />Smart Driving Licence</label
+        >
+        <button id="prevPage1" class="hidden">Back</button>
+      </div>
+      <div id="page2" class="hidden">
+        <div
+        style="
+          color: #ff4500;
+          text-align: center;
+          font-weight: 600;
+          font-size: 18px;
+        "
+      >
+        Let's get started!
+      </div>
+      <div style="text-align: center; color: gray">
+        Add your details (As per your registered records)
+      </div>
+      <br />
+        <div style="font-weight: 600; font-family: sans-serif">
+          Place where Driving Licence was issued
+        </div>
+        <input
+          type="text"
+          id="place"
+          class="text-input"
+          placeholder="Enter Place Number"
+        />
+        <div style="font-weight: 600; font-family: sans-serif">
+          Issued year of Licence
+        </div>
+        <select id="issuedYear" class="select-box">
+          <option value="" disabled selected>Select Issued Year</option>
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
+          <option value="2022">2022</option>
+          <!-- Add more options as needed -->
+        </select>
+        <div style="font-weight: 600; font-family: sans-serif">
+          Types of Previous Driving Licence
+        </div>
+        <select id="previousType" class="select-box">
+          <option value="" disabled selected>
+            Select Previous Licence Type
+          </option>
+          <option value="Type A">Type A</option>
+          <option value="Type B">Type B</option>
+          <option value="Type C">Type C</option>
+          <!-- Add more options as needed -->
+        </select>
+        <button id="prevPage2" class="btn">Back</button>
+        <button id="submit" class="btn-1">Submit</button>
+      </div>
+    </div>
+
+    <script>
+        const page1 = document.getElementById("page1");
+        const page2 = document.getElementById("page2");
+        const progress = document.getElementById("progress");
+    
+        const prevPage1Btn = document.getElementById("prevPage1");
+        const prevPage2Btn = document.getElementById("prevPage2");
+        const submitBtn = document.getElementById("submit");
+    
+        const nextPage = function () {
+          page1.classList.add("hidden");
+          page2.classList.remove("hidden");
+          updateProgress(60);
+          prevPage1Btn.classList.remove("hidden");
+        };
+    
+        const prevPage = function () {
+          page2.classList.add("hidden");
+          page1.classList.remove("hidden");
+          updateProgress(30);
+          prevPage1Btn.classList.add("hidden");
+        };
+    
+        const updateProgress = function (value) {
+          progress.style.width = value + "%";
+        };
+    
+        prevPage2Btn.addEventListener("click", prevPage);
+    
+        submitBtn.addEventListener("click", function () {
+          // Implement submission logic here
+          alert("Form submitted successfully!");
+        });
+    
+        function checkPage1Inputs() {
+          const name = document.getElementById("name").value.trim();
+          const nature = document.querySelector('input[name="nature"]:checked');
+          const type = document.querySelector('input[name="type"]:checked');
+          return name !== "" && nature !== null && type !== null;
+        }
+    
+        function checkPage2Inputs() {
+          const place = document.getElementById("place").value.trim();
+          const issuedYear = document.getElementById("issuedYear").value;
+          const previousType = document.getElementById("previousType").value;
+          return place !== "" && issuedYear !== "" && previousType !== "";
+        }
+    
+        document.getElementById("page1").addEventListener("input", function () {
+          if (checkPage1Inputs()) {
+            updateProgress(45);// Update to 45% when page 1 inputs are filled
+            nextPage();
+          } else {
+            updateProgress(15);// Update to 15% if inputs are incomplete
+          }
+        });
+    
+        document.getElementById("page2").addEventListener("input", function () {
+          if (checkPage2Inputs()) {
+            updateProgress(100);// Update to 100% when all inputs on page 2 are filled
+          } else {
+            updateProgress(75);// Update to 75% if inputs are incomplete
+          }
+        });
+    </script>
+    
+      
+  </body>
+</html>
